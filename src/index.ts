@@ -2,7 +2,7 @@ import app from './app'
 import {connection} from './connection'
 import {Request, Response} from 'express'
 
-app.put("/criarEstudante", async (req: Request, res: Response) => {
+app.put("/estudante/criar", async (req: Request, res: Response) => {
     try {
         await connection.raw(`
         INSERT INTO Student (nome, email, data_nasc, hobbies) VALUES (
@@ -19,7 +19,7 @@ app.put("/criarEstudante", async (req: Request, res: Response) => {
     }
 })
 
-app.put("/criarTurma", async (req: Request, res: Response) => {
+app.put("/turma/criar", async (req: Request, res: Response) => {
     try {
         await connection.raw(`
         INSERT INTO Class (nome, data_de_inicio, data_de_encerramento, professores, modulo) VALUES (
