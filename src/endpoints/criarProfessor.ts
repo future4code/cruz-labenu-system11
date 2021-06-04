@@ -9,10 +9,6 @@ export default async function criarProfessor(
             throw new Error("Por favor, preencha todos os dados.")
         }
 
-        if (req.body.turma_id != 0 - 7) {
-            throw new Error("Verifique se a turma está correta!")
-        }
-
         await adicionarProfessor(
             req.body.nome,
             req.body.email,
