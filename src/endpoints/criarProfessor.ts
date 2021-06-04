@@ -20,6 +20,11 @@ export default async function criarProfessor(
             .status(200)
             .send("Professor cadastrado com sucesso !")
     } catch (error) {
+
+        if (error.sqlMessage.includes("for key 'email'")) {
+            res.send("Por favor, insira um email válido.")
+        }
+
         res
             .status(400)
             .send({message: error.message || error.sqlMessage})
