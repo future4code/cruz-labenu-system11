@@ -9,8 +9,8 @@ export default async function criarTurma(
             throw new Error("Por favor, preencha todos os dados.")
         }
 
-        if (req.body.modulo <= 7) {
-            throw new Error("Por favor, verifique modulo.")
+        if (req.body.modulo > 7) {
+            throw new Error("Por favor, verifique módulo.")
         }
 
         await adicionarTurma(
@@ -22,7 +22,7 @@ export default async function criarTurma(
 
         res
             .status(200)
-            .send("Turma criada com sucesso !")
+            .send("Turma criada com sucesso!")
     } catch (error) {
         res
             .status(400)
